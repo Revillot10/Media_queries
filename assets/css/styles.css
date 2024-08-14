@@ -1,45 +1,59 @@
+.main_container {
+    display: grid;
+    padding: 0;
+    grid-template-rows: 1fr 1fr 7fr 1fr;
+    grid-template-areas: 
+        'navbar'    
+        'filters'
+        'gallery'
+        'footer';
+    height: 100vh;
+    width: 100%;
+}
+
 .navbar {
-    background-color: blue; /* Color de fondo */
-    color: white; /* Color del texto */
-    display: flex; /* Distribuye los elementos en columna */
-    flex-direction: column; /* Ordena los elementos en una columna */
-    align-items: flex-start; /* Alinea los elementos al principio del contenedor */
-    padding: 0; /* Espaciado interno */
-    grid-area: navbar; /* Asegura que el navbar se alinee con el área del grid */
+    display: flex;    
+    flex-direction: row; 
+    align-items: center;  
+    justify-content: space-between;
+    grid-area: navbar;
+    padding: 0; 
+    background-color: blue; 
+    color: white; 
 }
 
 .navbar-brand {
-    font-size: 1.5rem; /* Tamaño del texto de la marca */
-    font-weight: bold; /* Texto en negrita */
-    margin-bottom: 1rem; /* Espacio debajo del nombre de la marca */
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    margin-bottom: 0;  
 }
 
 .navbar-menu {
-    list-style: none; /* Elimina los bullets del menú */
-    margin: 0; /* Elimina el margen externo */
-    padding: 0; /* Elimina el padding interno */
-    width: 100%; /* Asegura que el menú ocupe todo el ancho disponible */
+    display: none; 
 }
 
-.navbar-menu li {
-    margin-bottom: 1rem; /* Espacio entre los elementos del menú */
+.navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
 }
 
-.navbar-menu a {
-    color: white; /* Color de los enlaces */
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    font-size: 1rem; /* Tamaño del texto de los enlaces */
+.navbar-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color:white; 
+    margin: 3px ;
+    border: 10px;
 }
 
-.navbar-menu a:hover {
-    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
-}
 
 
 .filters {
-    background-color: #f0f0f0; /* Fondo de la sección de filtros */
-    padding: 0.5rem; /* Espaciado interno */
-    grid-area: filters; /* Cambia el área de cuadrícula a filters */
+    background-color: #f0f0f0; 
+    padding: 0.5rem; 
+    grid-area: filters;
 }
 
 .filters form {
@@ -48,7 +62,7 @@
 }
 
 .filters label {
-    text-align: center ;
+    text-align: center;
 }
 
 .filters select {
@@ -58,25 +72,14 @@
     border-radius: 4px;
 }
 
-.main_container {
-    display: grid;
-    padding: 0;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 15fr 80fr 10fr;
-    grid-template-areas: 
-    'navbar filters'    
-    'navbar gallery'
-    'footer gallery';
-    height: 100vh;
-}
-
 .gallery {
     background-color: white;
     grid-area: gallery;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; 
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 
 .card {
@@ -85,40 +88,40 @@
     align-items: center;
     background-color: white;
     justify-content: space-between;
-    width: 200px; /* Ajusta el tamaño de la tarjeta */
-    height: 300px; /* Ajusta el tamaño de la tarjeta */
-    padding: 10px; /* Añade un pequeño padding */
+    width: 200px; 
+    height: 300px; 
+    padding: 10px; 
     margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 .card img {
-    width: 100%; /* La imagen ocupará todo el ancho de la tarjeta */
-    height: 250px; /* Mantendrá la proporción de la imagen */
-    max-height: 250px; /* Ajusta este valor para limitar la altura máxima */
-    object-fit: cover; /* La imagen se recorta para cubrir el área, sin deformarse */
+    width: 100%; 
+    height: 250px; 
+    max-height: 250px; 
+    object-fit: cover; 
 }
 
 .card h3, .card p {
     margin: 0;
     padding: 0;
     text-align: center;
-    width: 100%; /* Asegura que el texto ocupe todo el ancho disponible */
+    width: 100%; 
 }
 
 .card h3 {
-    margin-bottom: 0px; /* Ajusta este valor para reducir el espacio entre el h3 y el p */
+    margin-bottom: 0px; 
 }
 
 .card p {
-    margin-top: 0; /* Asegura que no haya margen superior en el párrafo */
+    margin-top: 0; 
 }
 
 .btn-comprar {
     background-color: blue;
     color: white;
-    width: 100%; /* El botón ocupará todo el ancho de la tarjeta */
+    width: 100%; 
     border: 0;
     padding: 0.5rem;
     text-align: center;
@@ -131,27 +134,113 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Ordena los elementos en una columna */
+    flex-direction: row; 
     padding: 0px;
 }
 
-.social-icons {
-    display: flex; /* Usa flexbox para alinear los íconos en línea */
-    justify-content: center; /* Centra los íconos horizontalmente */
-    padding: 0px; /* Espaciado interno */
-    gap: 5px; /* Espacio entre los íconos */
+.footer .social-icons {
+    display: flex; 
+    justify-content: center; 
+    padding: 0px; 
+    gap: 5px; 
 }
 
-.social-icon {
-    color: white; /* Color de los íconos (puedes ajustar este valor) */
-    font-size: 24px; /* Tamaño de los íconos (puedes ajustar este valor) */
+.footer .social-icon {
+    color: white; 
+    font-size: 24px; 
     text-decoration: none; 
 }
 
-.social-icon:hover {
+.footer .social-icon:hover {
     color: #007bff; 
 }
 
 .footer p {
-    margin: 0; /* Elimina el margen del párrafo */
+    margin: 0; 
+}
+
+/* Estilo para pantallas de 576px o más */
+@media (min-width: 576px) {
+    .main_container {
+        display: grid;
+        padding: 0;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 15fr 80fr 10fr;
+        grid-template-areas: 
+            'navbar filters'    
+            'navbar gallery'
+            'footer gallery';
+        height: 100vh;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: flex-start;
+        grid-area: navbar;
+        padding: 0; 
+        background-color: blue; 
+        color: white; 
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
+        grid-area: footer;
+        background-color: darkblue;
+        color: white;
+        padding: 0px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px;
+        grid-area: gallery;
+        background-color: white;
+        align-items: flex-start;
+    }
+
+    .filters {
+        grid-area: filters;
+        background-color: #f0f0f0; 
+        padding: 0.5rem; 
+    }
+    .navbar-menu {
+        display: flex;    
+        flex-direction: column; 
+        list-style: none; 
+        margin: 10px; 
+        padding: 0; 
+        width: 100%; 
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem; 
+        font-weight: bold; 
+        margin-bottom: 1rem;  
+        margin: 10px;
+    }
+
+    .navbar-menu li {
+        margin-bottom: 1rem; 
+    }
+    
+    .navbar-menu a {
+        color: white;
+        text-decoration: none; 
+        font-size: 1rem; 
+    }
+    
+    .navbar-menu a:hover {
+        text-decoration: underline; 
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
 }
